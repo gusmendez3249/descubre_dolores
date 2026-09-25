@@ -22,39 +22,46 @@ class DescubreDoloresApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const primaryColor = Color(0xFF7A2E1D); // Terracota Colonial
-    const secondaryColor = Color(0xFFD97706); // Ámbar dorado
+    const primaryColor = Color(0xFF9E3D24); // Terracota Imperial
+    const goldAccent = Color(0xFFD4AF37); // Oro Colonial
+    const darkBackground = Color(0xFF0F1115); // Obsidian Dark
+    const cardBackground = Color(0xFF181B22); // Dark Glass Surface
 
     return MaterialApp(
       title: 'Descubre Dolores Hidalgo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: primaryColor,
+        brightness: Brightness.dark,
+        colorScheme: const ColorScheme.dark(
           primary: primaryColor,
-          secondary: secondaryColor,
-          surface: const Color(0xFFFCFBF9),
+          secondary: goldAccent,
+          surface: cardBackground,
+          background: darkBackground,
+          onPrimary: Colors.white,
+          onSecondary: Colors.black,
+          onSurface: Color(0xFFF3F4F6),
         ),
-        scaffoldBackgroundColor: const Color(0xFFF7F4EF),
+        scaffoldBackgroundColor: darkBackground,
         appBarTheme: const AppBarTheme(
-          backgroundColor: primaryColor,
+          backgroundColor: Color(0xFF14171D),
           foregroundColor: Colors.white,
-          elevation: 2,
+          elevation: 0,
           centerTitle: true,
           titleTextStyle: TextStyle(
             fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 0.5,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 0.8,
             color: Colors.white,
           ),
         ),
         cardTheme: CardThemeData(
-          color: Colors.white,
-          elevation: 3,
-          shadowColor: Colors.black26,
+          color: cardBackground,
+          elevation: 6,
+          shadowColor: Colors.black45,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(20),
+            side: const BorderSide(color: Color(0xFF2A2E39), width: 1),
           ),
         ),
       ),
